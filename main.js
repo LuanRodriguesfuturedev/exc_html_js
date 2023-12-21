@@ -15,15 +15,18 @@ form.addEventListener('submit', function(e){
     const mensagemSucesso = `O valor de B(<b>${numberTwoB}</b>) é maior que o valor de A (<b>${numberOneA}</b>)`;
     const mensagemError = `O valor de B(<b>${numberTwoB}</b>) é menor que o valor de A (<b>${numberOneA}</b>)`;
 
+    // Define uma função para verificar se numberOneA é menor que numberTwoB
     function validNumber(numberOneA, numberTwoB){
         return numberOneA < numberTwoB;
     }
-
+    // Obtém referências para os elementos que exibirão as mensagens
     const containerMessagemSucesso = document.querySelector('.success-message');
     const containerMessagemError = document.querySelector('.error-message');
-
+    
+    // Verifica se o formulário é válido chamando a função validNumber
     formEValid = validNumber(numberOneA, numberTwoB);
 
+    // Exibe a mensagem apropriada com base no resultado da verificação
     if (formEValid){
         containerMessagemSucesso.innerHTML = mensagemSucesso;
         containerMessagemSucesso.style.display = 'block';
